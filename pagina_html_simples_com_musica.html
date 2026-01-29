@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❤️</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    /* telas */
+    .screen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* primeira tela */
+    #intro {
+      background-image: url('opening.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      padding: 30px;
+      cursor: pointer;
+    }
+
+    #intro h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    #intro p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* segunda tela */
+    #main {
+      display: none;
+      background-image: url('background.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* leve sombra pra leitura no intro */
+    #intro h1, #intro p {
+      text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- áudio -->
+  <audio id="music" src="musica.mp3" loop></audio>
+
+  <!-- tela 1 -->
+  <div id="intro" class="screen" onclick="start()">
+    <div>
+      <h1>Oi, meu amorzão ❤️</h1>
+      <p>Que essa mensagem linda te toque como me tocou</p>
+    </div>
+  </div>
+
+  <!-- tela 2 -->
+  <div id="main" class="screen"></div>
+
+  <script>
+    function start() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('main').style.display = 'flex';
+
+      const audio = document.getElementById('music');
+      audio.play();
+    }
+  </script>
+
+</body>
+</html>
